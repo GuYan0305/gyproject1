@@ -1,0 +1,71 @@
+﻿@model LanzhouBeefNoodles.ViewModels.HomeViewModel
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>公告列表</title>
+    <style type="text/css">
+        .gyhead {
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        /*表格样式*/
+        .gytable {
+            margin-left: 50px;
+            margin-top: 20px;
+            border: 1px solid #232020;
+            border-collapse: collapse;
+        }
+
+            .gytable th, td {
+                padding: 3px;
+                border: 1px solid #232020;
+                text-align: center;
+            }
+            .gytable th,td:not(.one){
+                width:160px;
+            }
+
+            .gytable a {
+                text-decoration: none;
+                color: #464159;
+                font-size: 17px;
+                display: inline-block;
+                width: 60px;
+            }
+
+                .gytable a:hover {
+                    color: #a11792;
+                    background-color: #f2f2f2;
+                }
+       
+    </style>
+</head>
+<body>
+    <div class="gyhead">
+        <h2>公告列表</h2>
+        <a asp-controller="Admin0" asp-action="Index">管理中心</a>
+        <a asp-controller="Notice" asp-action="Index">添加公告</a>
+    </div>
+    <table class="gytable">
+        <tr>
+            <th class="one" style="width:300px;"><h4>公告标题</h4></th>
+            <th><h4>发布时间</h4></th>
+            <th><h4>操作</h4></th>
+        </tr>
+        @foreach(var notices in Model.Notices)
+        {
+        <tr>
+            <td class="one"><a style="width:250px;" asp-controller="Notice" asp-action="Detail" asp-route-id="@notices.Id">@notices.Title</a></td>
+            <td>@notices.CreateDateUTC</td>
+            <td>
+                <a href="/selectnotice/del/@notices.Id">删除</a>
+                <a href="/selectnotice/update/@notices.Id">修改</a>
+            </td>
+        </tr>
+        }
+    </table>
+  
+</body>
+</html>

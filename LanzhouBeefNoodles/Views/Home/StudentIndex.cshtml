@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "学生服务中心";
+}
+
+<html>
+<head>
+    <title>学生服务中心</title>
+    <style type="text/css">
+        body {
+            background-image: url("/images/ablity_background.png");
+            background-size: cover;
+        }
+       
+            .back h2 {
+                font-weight: bold;
+                color: #e5dfdf;
+                margin-bottom: 30px;
+                margin-left:30px;
+            }
+    </style>
+</head>
+<body>
+    <br><br />
+    <br><br />
+       <div class="row col-lg-12 back" >
+            <h2>欢迎来到学生服务中心!</h2>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div id="navbar" class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("课程中心", "Classcenter", "Home")</li>
+                            <li>@Html.ActionLink("共享笔记", "Trainingprogram", "Home")</li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>

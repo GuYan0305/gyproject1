@@ -1,0 +1,69 @@
+﻿@model LanzhouBeefNoodles.Models.LearningVideo
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <style type="text/css">
+
+        #gyDiv {
+            position: absolute;
+            left: 10%;
+            top: 15%;
+            background-color: rgba(210, 234, 246, 0.21);
+            background-size: 100% 100%;
+            width: 1000px;
+            padding-left: 20px;
+            padding-top: 30px;
+            box-shadow: 8px 8px 6px 3px #698474;
+        }
+        /*标签*/
+        .gyLabel {
+            font-size: 20px;
+            letter-spacing: 0.5em;
+        }
+        /*修改按钮*/
+        .gyBtn {
+            width: 50%;
+            text-align: center;
+            background-color: #e5e4cc;
+            color: #000;
+            position: relative;
+            left: 19%;
+            border: none;
+            padding: 5px 0;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+            .gyBtn:hover {
+                background-color: #bac7a7;
+            }
+        /*文本框*/
+        #gyForm input:not(.gyBtn) {
+            width: 90%;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h2 style="position:absolute;left:10%;" name="newTitle">修改课程</h2>
+    <div id="gyDiv">
+        <form method="post" action="~/SelectCourse/UpdateCourse" id="gyForm">
+            <label class="gyLabel">课程名：</label><input id="dont" type="text" name="coursename" value="@Model.CourseID" readonly="readonly"/><br />
+            <label class="gyLabel">任课教师：</label><input type="text" name="teacher" value="@Model.Teacher" /><br>
+            <label class="gyLabel">总课时：</label><input type="text" name="duration" value="@Model.Duration" /><br>
+            <label class="gyLabel">更新时间：</label><input type="text" name="updatetime" value="@Model.UpdateTime" /><br>
+            <label class="gyLabel">视频URL：</label><input type="text" name="video" value="@Model.Url" /><br>
+            <input style="margin-top:20px;" class="gyBtn" type="submit" value="修改" />
+            <input class="gyBtn" type="button" value="返回" onclick="goback()" />
+        </form>
+    </div>
+    <script type="text/javascript">
+        function goback() {
+            location.assign("https://localhost:5001/SelectCourse/Index");
+        }
+     
+    </script>
+</body>
+</html>
+

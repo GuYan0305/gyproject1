@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>信息与控制工程学院简介</title>
+    <!--引入css/bootstrap.min.css-->
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!--引入对应版本的jQuery-->
+    <script src="~/content/jquery-3.2.1/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <!--引入js/bootstrap.min.js-->
+    <script src="~/lib/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--设置附加导航栏的样式-->
+    <style type="text/css">
+        body {
+            overflow: auto;
+        }
+        /*自定义的附加导航样式*/
+        ul .nav-tabs {
+            /*边框*/
+            border: 1px solid #ddd;
+            /*盒阴影*/
+            box-shadow: 8px 8px 3px #666;
+        }
+            /*给每个li添加边框*/
+            ul.nav-tabs li:not(.active) {
+                border-top: 1px solid #ddd;
+            }
+
+            ul.nav-tabs li {
+                width: 150px;
+                text-align: center;
+            }
+                /*设置当链接被访问后的颜色*/
+                ul.nav-tabs li.active, ul.nav-tabs li.active a:visited {
+                    color: #fff;
+                    background-color: purple;
+                }
+
+        /*文档头样式*/
+        .head {
+            width: 100%;
+            height: 200px;
+            margin-left: 10px;
+            margin-right: 110px;
+            margin-bottom: 20px;
+            background-color: #621005;
+            background-image: linear-gradient(to right,#521262,#c06c84);
+        }
+        /*字体样式*/
+        #title1 {
+            position: relative;
+            left: 100px;
+            bottom: 150px;
+            font-style: italic;
+            color: #dde7f2;
+            text-shadow: 8px 8px 3px #808080;
+            font-size: 50px;
+            letter-spacing: 3px;
+        }
+        /*当网页宽度小于500px时让头部字体*/
+        media screen and (max-width:500px) {
+            #title1
+
+        {
+            font-size: 20px;
+        }
+
+        }
+
+        /*表格样式*/
+        .tb, .tb th, .tb td {
+            border: 1px solid #000;
+        }
+
+        .tb {
+            border-collapse: collapse;
+        }
+
+            .tb td {
+                width: 150px;
+                height: 30px;
+                text-align: center;
+            }
+
+            .tb th {
+                width: 150px;
+                height: 50px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 15px;
+            }
+        /*段落样式*/
+        p {
+            text-indent: 2em;
+            font-size: 16px;
+        }
+        /*院徽*/
+        #yuanhui {
+            margin-left: 250px;
+        }
+        /*底部部分样式*/
+        .bottompart {
+            width: 100%;
+            background-color: #CCC;
+            position: absolute;
+            top: 4000px;
+            text-align: center;
+        }
+
+            .bottompart p:first-child {
+                margin-top: 20px;
+            }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#myScrollspy">
+    <div class="container">
+        <!--文档头-标题部分-->
+        <div class="row col-xs-12 head">
+        </div>
+        <span id="title1">信息与控制工程学院</span>
+
+        <div class="row">
+            <!--附加导航栏部分-->
+            <div class="col-xs-3" id="myScrollspy">
+                <ul class="nav nav-tabs nav-stacked" data-spy="affix" data-offset-top="125">
+                    <li class="active"><a href="#section-1">学院简介</a></li>
+                    <li><a href="#section-2">院徽说明</a></li>
+                    <li><a href="#section-3">现任领导</a></li>
+                    <li><a href="#section-4">学科布局</a></li>
+                    <li><a href="#section-5">联系方式</a></li>
+                </ul>
+            </div>
+            <!--正文部分-->
+            <div class="col-xs-9">
+                <!--1-->
+                <h2 id="section-1">学院简介</h2>
+                <p>青岛理工大学信息与控制工程学院成立于2018年初，是学校为适应新形势要求、实现内涵发展、服务新旧动能转换重大工程做出的重要决策，由原自动化工程学院、计算机工程学院和通信与电子工程学院整合组建而成。</p>
+                <p>学院现有在校研究生和本科生4660余人，教职工近160人，硕士生导师57人。现有控制科学与工程、计算机科学与技术、信息与通信系统、软件工程4个一级学科硕士点；控制工程和计算机技术2个工程硕士学位授予权学位点；自动化、计算机科学与技术、电气工程及其自动化、电子信息工程、通信工程（移动互联方向）、网络工程、建筑电气与智能化、软件工程（服务外包方向）和机器人工程等9个本科专业；其中自动化和计算机科学与技术专业先后获评“省级特色专业”和“山东省一流本科建设专业”；获批2个山东省高水平应用型专业群。学院设有自动化教学与实验实训中心、信息与通信工程中心、计算机工程实验中心3个实验中心和1个计算中心。现有大学计算机基础、电路原理、模拟电子技术基础、数字电子技术基础、信号与系统等五门省级精品课程。</p>
+                <p>学院建有青岛市建筑电气节能与智能化工程研究中心、校级科研平台信息与通信工程重点实验室、计算机与控制工程研究所、信息对抗研究所等科研机构。近五年，学院共承担省部级以上课题36项，资助金额860余万元，其中国家级课题16项，资助金额600余万元。发明专利授权17项，获山东高等学校优秀科研成果奖等奖项6项。发表学术论文200余篇，其中SCI收录60余篇，EI收录110余篇。</p>
+                <p>学院近两年先后承办了山东省大学生科技创新研讨会、“蓝桥杯”全国软件设计大赛（省赛）、第十届山东省大学生科技节网络技术大赛、第七届山东省机器人大赛、第三届山东省大中专学生社团节ACM程序设计竞赛、青岛市智能车竞赛等高水平赛事（会议）；举办“致新讲坛”专家报告会30余场，组织学生参加全国大学生电子设计竞赛、ACM 大学生程序设计竞赛、全国大学生智能车竞赛等学科竞赛中获得国家级奖励100余项，省级奖励900余项，53名同学在国内外20种期刊上发表论文29篇，有28名同学获得了14项专利（著作权）的授权；学院科技创新双立项和国家级大学生创新创业训练项目的数量在学校名列前茅；学院的三个科技社团“开发者俱乐部”、“电子科技协会”和“网络协会”均获评“山东省优秀大学生科技社团”。</p>
+                <p>学院积极开展与国外高校及组织的合作交流，同韩国光云大学、德国马格德堡应用技术大学、印度国家信息技术学院、日本诹访东京理科大学等院校进行了沟通交流，达成合作培养协议1项；与青岛市气象局、IBM（中国）研发中心、青软实训、东软睿道等部门和企业深入推进交流合作，校企合作专业人才培成果显著，人工智能学院筹建工作稳步推进；成功获批“青岛市服务外包人才培训认定机构”，完成大数据人才师资及学生入库工作。</p>
+                <hr>
+                <!--2-->
+                <h2 id="section-2">院徽说明</h2>
+                <p>根据学院办学理念、办学特色、文化传统、精神品格深刻凝练而形成的院徽，是学院的重要标志和象征，具有极高的艺术设计感与生动的象征寓意。经过公开征集、专家评议、反复修改、院内公示等程序，学院最终确定了院徽设计方案，即日起正式启用，现将相关情况说明如下：</p>
+                <img id="yuanhui" src="~/images/yuanhui.png" alt="院徽图片加载失败" title="院徽" />
+                <h4 style="color:#333">一、设计说明</h4>
+                <p>院徽外形以圆形为基础，整体采用深蓝色的配色方案，与校徽相承相和，学校名称和英文简写QUT代表了学院作为学校教学院部的身份，院徽整体图案结构紧促、简约大方，彰显学院沉稳厚重精神品格和和自由活跃的学术追求。</p>
+                <p>中心图案的设计原型为被誉为“中华第一龙”的“玉猪龙”，是红山文化时期至高无上的宗教礼器和神权象征，寓意后代繁衍不息，生活富足。2018年初新组建的信息与控制工程学院必将如“龙之初”一般，生生不息，发展壮大。中心图案由学院名称的英文简写字母“i”、“c”、“e”组合变化而成，中心纹样似浪似云，结合青岛海洋城市元素，象征着信控学子必将踏浪而来，直上九霄。中心图案整体造型“E”,也是英文Education的首字母，代表学院立德树人、教育报国的初心和使命，体现了信控师生服务国家经济发展战略，引领和助推信息产业腾飞，勇做信息科技领跑者的坚强意志。</p>
+                <h4 style="color:#333">二、使用说明</h4>
+                <p>1.院徽是学院重要文化标识，全体师生应尊重和爱护院徽，遵守使用规范，不得随意更改院徽的字体、颜色和组合方式。</p>
+                <p>2.院徽的使用应处理好与周围环境的关系，使之庄重、醒目、协调。未经授权，任何人不得将院徽用作商标和广告。</p>
+                <p>3.院徽具有唯一性。自启用之日起，学院各科室自行设计使用的各类logo等标志应停止使用。</p>
+                <p>4.院徽由我校艺术与设计学院王晖老师设计，版权归学院所有，由学院学生工作办公室负责解释和管理。</p>
+                <hr>
+                <!--3-->
+                <h2 id="section-3">现任领导</h2>
+                <table class="tb">
+                    <!--表头-->
+                    <tr>
+                        <th>姓名</th>
+                        <th>职务</th>
+                        <th>办公电话</th>
+                        <th>邮箱</th>
+                    </tr>
+                    <!--数据-->
+                    <tr>
+                        <td>董曲同</td>
+                        <td>党总支书记</td>
+                        <td>0532-68052211</td>
+                        <td><a href="mailto:674202692@qq.com">674202692@qq.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>周玉国</td>
+                        <td>党总支副书记、院长</td>
+                        <td>0532-68052208</td>
+                        <td><a href="mailto:zhouyuguo@163.com">zhouyuguo@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>曲良波</td>
+                        <td>党总支副书记</td>
+                        <td>0532-68052213</td>
+                        <td><a href="mailto:qlb@qut.edu.cn">qlb@qut.edu.cn</a></td>
+                    </tr>
+                    <tr>
+                        <td>聂廷远</td>
+                        <td>副院长</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:tynie@qut.edu.cn">tynie@qut.edu.cn</a></td>
+                    </tr>
+                    <tr>
+                        <td>赵景波</td>
+                        <td>副院长</td>
+                        <td>0532-86871382</td>
+                        <td><a href="mailto:zhaojingbo6666@163.com">zhaojingbo6666@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>王金龙</td>
+                        <td>副院长</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:qdwangjinlong@163.com">qdwangjinlong@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>宋传旺</td>
+                        <td>副院长</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:songchw@163.com">songchw@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>周炜</td>
+                        <td>院长助理</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:zhouwei@qut.edu.cn">zhouwei@qut.edu.cn</a></td>
+                    </tr>
+                </table>
+                <h4 style="color:#333">1、工作分工</h4>
+                <p>党总支书记董典同同志主持党总支全面工作。负责学院党建工作，履行党建第一责任人职责，负责干部队伍建设及学院分会工作；指导各群团组织开展工作；负责网站建设工作。</p>
+                <p>党总支副书记、院长周玉国同志主持学院行政全面工作，负责人才引进，学院经费、对外服务等工作。</p>
+                <p>党总支副书记曲良波同志负责本科及研究生学生教育管理、党建工作；负责就业创业工作；负责宣传工作；负责校友工作；负责安全稳定工作；指导共青团开展工作。</p>
+                <p>副院长聂廷远同志负责科学研究、档案工作。</p>
+                <p>副院长赵景波同志负责研究生工作；负责资产管理工作。</p>
+                <p>副院长王金龙同志负责学科平台及团队建设工作。</p>
+                <p>副院长宋传旺同志负责本科教学、实验室工作；负责学生科技创新指导工作。</p>
+                <p>院长助理周炜同志负责国际交流、合作办学工作。</p>
+                <h4 style="color:#333">2、工作补位</h4>
+                <p>董典同同志与周玉国同志互相补位；</p>
+                <p>董典同同志与曲良波同志互相补位；</p>
+                <p>赵景波同志与王金龙同志互相补位；</p>
+                <p>聂廷远同志与宋传旺同志互相补位；</p>
+                <p>周炜同志与宋传旺同志互相补位；</p>
+                <p>班子成员之间根据工作需要互相补位。</p>
+                <hr>
+                <!--4-->
+                <h2 id="section-4">学科布局</h2>
+                <h4 style="color:#333">一、计算机科学与技术（学科负责人：王金龙）</h4>
+                <p>计算机科学与技术专业于1994年开始本科生招生。2003年、2006年分别获批计算机应用技术、计算机软件与理论二级学科硕士学位授权点，2009年获批计算机技术专业学位授权点；2011年获批计算机科学与技术一级学科硕士学位授权点。计算机科学与技术学科是山东省高等教育“名校工程”重点建设的骨干专业学科、校级重点学科，2013年被遴选为“山东省特色专业建设学科点”，同年入选“教育部卓越工程师教育培养计划”，2016年获批“山东省高水平应用型专业群”，2018年获批教育部高等学校计算机类专业教学指导委员会“系统能力培养——专业课程体系改革及课程建设”试点单位。2019年计算机科学与技术专业获批山东省一流本科建设专业。</p>
+                <h4 style="color:#333">二、控制科学与工程（学科负责人：林旭梅）</h4>
+                <p>控制科学与工程学科是青岛理工大学优先发展的特色优势学科之一。自动化专业于1996年开始本科生招生。2013 年，自动化专业成为山东省应用基础型人才培养特色名校重点建设专业，同年，建设成为山东省本科特色专业。2005年，获批控制理论与控制工程二级学科硕士点；2010年，获批控制科学与工程一级学科硕士学位授予权和控制工程专业学位授权点。2019年，自动化专业获批山东省一流本科建设专业。</p>
+                <h4 style="color:#333">三、信息与通信工程（学科负责人：聂廷远）</h4>
+                <p>信息与通信工程学科是学校优先发展的重点学科之一，2005年获批“通信与信息系统”二级硕士学位授权点，2010年获批“信息与通信工程”一级硕士学科授权点。2016年通信工程、电子信息工程等专业组成的专业群被省教育厅列为“山东省高水平应用型专业建设群”，主要从事：电路设计、信息处理、通信技术、复杂网络等方面的研究和技术开发。</p>
+                <h4 style="color:#333">四、软件工程（学科负责人：周炜）</h4>
+                <p>青岛理工大学2006年获批计算机软件与理论二级学科硕士学位授权点，2008年成立软件工程专业，开始招收本科生。2009年获批计算机技术工程领域硕士学位授权点，2011年获批软件工程一级学科硕士学位授权点，2016年获批“山东省高水平应用型专业群”。根据学科基础与工程需要，经过多年的建设发展本学科己形成了软件工程技术、领域软件工程、软件服务工程3个特色鲜明的研究方向。</p>
+                <hr>
+                <!--5-->
+                <h2 id="section-5">联系方式</h2>
+                <table class="tb">
+                    <!--表头-->
+                    <tr>
+                        <th>姓名</th>
+                        <th>职务</th>
+                        <th>办公电话</th>
+                        <th>邮箱</th>
+                    </tr>
+                    <!--数据-->
+                    <tr>
+                        <td>董曲同</td>
+                        <td>党总支书记</td>
+                        <td>0532-68052211</td>
+                        <td><a href="mailto:674202692@qq.com">674202692@qq.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>周玉国</td>
+                        <td>党总支副书记、院长</td>
+                        <td>0532-68052208</td>
+                        <td><a href="mailto:zhouyuguo@163.com">zhouyuguo@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>曲良波</td>
+                        <td>党总支副书记</td>
+                        <td>0532-68052213</td>
+                        <td><a href="mailto:qlb@qut.edu.cn">qlb@qut.edu.cn</a></td>
+                    </tr>
+                    <tr>
+                        <td>聂廷远</td>
+                        <td>副院长</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:tynie@qut.edu.cn">tynie@qut.edu.cn</a></td>
+                    </tr>
+                    <tr>
+                        <td>赵景波</td>
+                        <td>副院长</td>
+                        <td>0532-86871382</td>
+                        <td><a href="mailto:zhaojingbo6666@163.com">zhaojingbo6666@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>王金龙</td>
+                        <td>副院长</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:qdwangjinlong@163.com">qdwangjinlong@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>宋传旺</td>
+                        <td>副院长</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:songchw@163.com">songchw@163.com</a></td>
+                    </tr>
+                    <tr>
+                        <td>周炜</td>
+                        <td>院长助理</td>
+                        <td>0532-68052207</td>
+                        <td><a href="mailto:zhouwei@qut.edu.cn">zhouwei@qut.edu.cn</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <div class=" row  bottompart">
+        <p>Copyright 2019-11-27 GuYan 版权所有</p>
+        <p>联系我们: <a href="mailto:1558031593@qq.com?&cc=376656937@qq.com&subject=联系我们&body=意见反馈">发送邮件</a></p>
+    </div>
+</body>
+</html>
+
+
+
+
+
+

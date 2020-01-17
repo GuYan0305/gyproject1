@@ -1,0 +1,74 @@
+﻿@model LanzhouBeefNoodles.ViewModels.HomeViewModel
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>新闻列表</title>
+    <style type="text/css">
+        .gyhead{
+            margin-left:50px;
+            margin-top:50px;
+        }
+
+        /*表格样式*/
+        .gytable {
+            margin-left:50px;
+            margin-top: 20px;
+            border: 1px solid #232020;
+            border-collapse: collapse;
+        }
+            .gytable th, td {
+                padding: 3px;
+                border: 1px solid #232020;
+                text-align: center;
+            }
+            .gytable th,td:not(.one){
+                width:160px;
+            }
+        .one{
+           
+        }
+        .gytable a{
+            text-decoration: none;
+            color: #464159;
+            font-size:17px;
+            display:inline-block;
+            width:60px;
+        }
+            .gytable a:hover{
+                color:#a11792;
+                background-color:#f2f2f2;
+            }
+    </style>
+</head>
+<body>
+    <div class="gyhead">
+        <h2>新闻列表</h2>
+        <a asp-controller="Admin0" asp-action="Index">管理中心</a>
+        <a asp-controller="New" asp-action="Index">添加新闻</a>
+    </div>
+    <hr />
+    <table class="gytable">
+        <tr>
+            <th class="one" style=" width:300px;"><h4>新闻标题</h4></th>
+            <th><h4>发布时间</h4></th>
+            <th><h4>操作</h4></th>
+        </tr>
+        @foreach (var news in Model.News)
+        {
+            <tr>
+                <td class="one"> <a style="width:250px;" asp-controller="New" asp-action="Detail" asp-route-id="@news.Id">@news.Title</a></td>
+                <td>@news.CreateDateUTC</td>
+                <td>
+                    <a class="gya" href="/selectnew/del/@news.Id" >删除</a>
+                    <a class="gya" href="/selectnew/Update/@news.Id">修改</a>
+                </td>
+
+            </tr>
+        }
+    </table>
+    
+</body>
+</html>
+
+

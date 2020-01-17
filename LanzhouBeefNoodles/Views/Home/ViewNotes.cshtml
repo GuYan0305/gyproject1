@@ -1,0 +1,205 @@
+﻿@model LanzhouBeefNoodles.ViewModels.HomeViewModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewBag.Title = "ViewNotes";
+}
+<!DOCTYPE html>
+<head>
+    <base href="<%=basePath%>">
+    <title>共享笔记</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="This is my page">
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script type="text/javascript">
+        function del() {
+            /* 显示 */
+            document.getElementById("delete").style.display = "block";
+        }
+        function delesc() {
+            /* 隐藏 */
+            document.getElementById("delete").style.display = "none";
+        }
+        function change() {
+            /* 修改内容 */
+            document.getElementById("change").style.display = "block";
+        }
+        function changesc() {
+
+            /* 隐藏 */
+            document.getElementById("change").style.display = "none";
+        }
+        function add() {
+            /* 增加我的笔记  跳出表格框*/
+            document.getElementById("add").style.display = "block";
+        }
+        function addsc() {
+
+            /* 隐藏 */
+            document.getElementById("add").style.display = "none";
+        }
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#delitem").click(function () {
+                var data = $('#firsttime').val();
+                $.post("/Home/DelNotes", { frontViewData: data }, function () {
+                    alert("删除成功");
+                });
+            });
+        })
+        $(function () {
+            $("#ascCourse").click(function () {
+                var data = $('#firsttime').val();
+                $.post("/Home/ascCourse", { frontViewData: data }, function () {
+                    alert("删除成功");
+                });
+            });
+        })
+    </script>
+    <style>
+        body {
+            background-image: url("/images/ablity_background.png");
+            background-size: cover;
+        }
+
+        .body_transparent {
+            position: absolute;
+            left: 10%;
+            margin-top: 30px;
+            background-size: 100% 100%;
+            background-color: rgba(210, 234, 246, 0.21);
+            opacity: 1;
+        }
+
+        .btn {
+            background-color: #33c780;
+            background-size: 100% 100%;
+        }
+
+        .pop1 {
+            border: 1px solid;
+            width: 100%;
+            margin: auto;
+            height: 100%;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            background: rgba(0,0,0,0.6);
+            overflow: auto;
+            text-align: center;
+            display: none;
+        }
+
+        .pop2 {
+            background: white;
+            width: 500px;
+            height: 600px;
+            margin: auto;
+            margin-top: 50px;
+            border-radius: 5px;
+        }
+        #change_notes{
+            padding-left:10px;
+        }
+    </style>
+</head>
+<body background="E:\vs\vs_debug\StudentSystem1\ablity_background.png"
+      style=" background-repeat:no-repeat ;
+        background-size:100% 100%;
+        background-attachment: fixed;"
+      background-position:center 0>
+    <div class="body_transparent" style="width:1100px ;height:500px">
+        <br />
+        <br />
+        <div>
+            <h1>我的笔记</h1>
+        </div>
+        <div>
+            <!--实现对笔记的增删改查--><!--可以查看所有笔记 但是只能修改和删除自己的笔记-->>
+            <form method="post" action="~/Home/Trainingprogram">
+                <input class="btn" type="submit" value="返回" />
+            </form>
+        </div>
+        <div>
+            <!--查看所有笔记-->>
+            <table class="table table-hover" align="center">
+                <tr>
+                    <th>发表日期
+                    <th>课程名称
+                    <th>作者
+                    <th>  -
+                    <th>  -
+                </tr>
+                @foreach (var Note in Model.Notes)
+                {
+                    if (Note.Author == @UserManager.GetUserName(User))
+                    {
+                <tr>
+                    <td>@Note.FirstTime
+                    <td>@Note.CourseID
+                    <td>@Note.Author
+                    <td>
+                    <td>
+                        < <!-- 按钮 -->
+                        
+                        <a id="gya" asp-controller="Home" asp-action="SelectNote" asp-route-id="@Note.Id">查看</a>
+                        <!-- 查看笔记框 -->
+                        <div id="delete" class="pop1">
+                            <div class="pop2">
+                                <div style="height: 110px;border-bottom: 1px solid #CCCCCC;">
+
+                                    <!-- 框内内容 -->
+                                    <div style="font-size: 1rem;padding-top: 30px;"><h5>@Note.Content</h5></div>
+
+                                </div>
+                                <div style="height: 39px; ">
+                                    <div onclick="delesc()" style="float: right;width: 100%;height: 39px;line-height: 39px;font-size: 1rem;padding-bottom: 30px;">关闭</div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>
+
+                        <input onclick="change()" type="button" value="修改" style="width: 70px;height: 30px;border: 0px;border-radius: 5px;background-color: #0271CD;color: white;">
+                       
+                        <!-- 修改确认框 -->
+                        <div id="change" style="border: 1px solid;width: 100%;margin: auto;height: 100%;position: fixed;left: 0px;top: 0px;background: rgba(0,0,0,0.6);overflow: auto;display: none;">
+                            <div style="background: white;width: 400px;height: 400px;margin: auto;margin-top: 50px;border-radius: 5px;">
+                                <div style="height: 110px;border-bottom: 1px solid #CCCCCC;">
+                                    <!--修改框中显示内容-->
+                                    <div style="font-size: 1.5rem;padding-top: 30px;">
+                                        <form id="change_notes" method="post" action="~/Home/ChangeNotes">
+                                            作者：<input style="margin-left:30px;" type="text" name="author" value="@UserManager.GetUserName(User)" readonly="readonly"/><br />
+                                            创建时间：<input type="text" id="firsttime" name="firsttime" value="@Note.FirstTime" /><br>
+                                            学习科目：<input type="text" name="courseid" value="@Note.CourseID" readonly="readonly"><br>
+                                            笔记内容：<textarea style="margin-left:0px;" name="content" col="5" rows="5">@Note.Content</textarea><br>
+                                            <input type="submit" style="float: right;width: 100%;height: 39px;line-height: 39px;font-size: 1rem;padding-bottom: 30px;" value="修改" />
+  
+                                            <input type="button" onclick="changesc()" style="float: right;width: 100%;height: 39px;line-height: 39px;font-size: 1rem;padding-bottom: 30px;" value="关闭" /> 
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <td>
+                        <a href="/Home/DelNotes/@Note.Id">删除</a>
+                    </td>
+
+                </tr>
+                    }
+                }
+
+            </table>
+        </div>
+
+       
+    </div>
+</body>
+

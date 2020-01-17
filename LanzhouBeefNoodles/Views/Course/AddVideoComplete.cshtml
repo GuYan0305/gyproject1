@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "AddVideoComplete";
+}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <style type="text/css">
+        #para{
+            width:160px;
+        }
+    </style>
+    <script type="text/javascript">
+        var num = 5;
+        function jump() {
+            var obj = document.getElementById("para");
+            if (num > 0) {
+                obj.innerHTML=num+"秒后跳转到"//详情列表，用于删除
+                num--;
+            }
+            if (num == 0) {
+                location.assign("https://localhost:5001/SelectCourse/Index");
+            }
+        }
+        setInterval(jump, 1000);
+      
+    </script>
+</head>
+<body>
+    <h2>上传成功</h2>
+    <p id="para"></p>
+    <a href="https://localhost:5001/SelectCourse/Index">详情界面</a>
+</body>
+</html>
+

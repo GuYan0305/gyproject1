@@ -1,0 +1,45 @@
+﻿@model LanzhouBeefNoodles.Models.Notes
+@{
+    ViewData["Title"] = "SelectNote";
+}
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <style type="text/css">
+        h2{
+            margin-top:20px;
+            float:left;
+        }
+        #gyDiv {
+            width: 80%;
+            background-color: rgba(210, 234, 246, 0.21);
+            background-size:100% 100%;
+            position:absolute;
+            left:10%;
+            margin-top:70px;
+        }
+        #gyDiv p{
+            text-indent:2em;
+            font-size:20px;
+            padding:20px 0;
+        }
+        .gya{
+            display:inline-block;
+            margin-left:20px;
+            margin-top:20px;
+            text-decoration:none;
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="margin-left:100px;">@Model.Author</h2><h2>的笔记</h2>
+    <a class="gya" href="https://localhost:5001/Home/Trainingprogram">所有笔记</a>
+    <a class="gya" href="https://localhost:5001/Home/ViewNotes">我的笔记</a>
+    <div id="gyDiv">
+        <p>@Model.Content</p>
+    </div>
+</body>
+</html>
+
+

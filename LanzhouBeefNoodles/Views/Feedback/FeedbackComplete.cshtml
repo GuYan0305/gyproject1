@@ -1,0 +1,33 @@
+﻿<!--48->Models/Feedback.cs去完成数据验证-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>反馈提交成功</title>
+    <style type="text/css">
+        #jump {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h2>感谢您的反馈意见！</h2>
+    <p id="jump"></p>
+    <a asp-controller="Default" asp-action="Index">详情页面...</a>
+    <script type="text/javascript">
+            var num = 5;
+            function goto() {
+                document.getElementById("jump").innerHTML = num + "秒后跳转到";
+                if (num > 0) {
+                    num--;
+                }
+                if (num == 0) {
+                    location.assign("https://localhost:5001/Default/Index");
+                }
+            }
+            setInterval(goto, 1000);
+    </script>
+</body>
+</html>
+
+

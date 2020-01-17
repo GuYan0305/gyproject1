@@ -1,0 +1,262 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>管理员主界面</title>
+    <link href="~/wwwroot/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        * {
+            box-sizing: border-box;
+        }
+
+        .col-1 {
+            width: 8.33%;
+        }
+
+        .col-2 {
+            width: 16.66%;
+        }
+
+        .col-3 {
+            width: 25%;
+        }
+
+        .col-4 {
+            width: 33.33%;
+        }
+
+        .col-5 {
+            width: 41.66%;
+        }
+
+        .col-6 {
+            width: 50%;
+        }
+
+        .col-7 {
+            width: 58.33%;
+        }
+
+        .col-8 {
+            width: 66.66%;
+        }
+
+        .col-9 {
+            width: 75%;
+        }
+
+        .col-10 {
+            width: 83.33%;
+        }
+
+        .col-11 {
+            width: 91.66%;
+        }
+
+        .col-12 {
+            width: 100%;
+        }
+        /*每一列左浮动，内边距15*/
+        [class|="col"] {
+            float: left;
+            padding: 15px;
+        }
+        /*每一行清除浮动，显示为块状*/
+        .gyrow:after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        /*头部样式*/
+        .gyheader {
+            max-width: 100%;
+            height: 170px;
+            background-image: linear-gradient(to bottom right,#00b8a9,#e3fdfd);
+            padding-left: 520px;
+            padding-top: 45px;
+        }
+
+            .gyheader p {
+                font-size: 35px;
+                font-weight: bold;
+                font-style: italic;
+                text-shadow: 6px 6px 3px #666;
+                position: absolute;
+                letter-spacing: 0.5em;
+                color: #40514e;
+            }
+
+
+        /*水平导航栏*/
+        .topnav {
+            box-sizing: border-box;
+            background-color: #6BA8A9;
+            height: 30px;
+        }
+        /*设置导航栏dropdown*/
+        .dropdown {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            padding: 5px 0;
+            position: relative;
+        }
+        /*导航按钮dropbtn*/
+        .dropbtn {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            width: 100px;
+        }
+            /*鼠标滑过效果*/
+            .dropbtn:hover {
+                color: white;
+            }
+        /*下拉内容*/
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            width: 160px;
+            box-shadow: 6px 6px 3px #666;
+            background-color: #FFF;
+        }
+            /*下拉内容下的链接样式*/
+            .dropdown-content a {
+                text-decoration: none;
+                display: block;
+                text-align: center;
+                color: #000;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #666;
+                    color: white;
+                }
+        /*显示下拉菜单*/
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        /*下拉菜单显示后改变按钮背景色*/
+        .dropdown:hover {
+            background-color: #036;
+        }
+        /*功能介绍和注意事项*/
+        .gyDiv {
+            margin-top: 30px;
+            margin-left: 150px;
+            
+        }
+
+            .gyDiv p {
+                width: 100%;
+                border-bottom: 1px solid #666;
+                font-size: 17px;
+            }
+
+        .div1 {
+            border-right: 1px solid #666;
+            padding-right: 50px;
+            
+        }
+
+        .div2 {
+            padding-left: 30px;
+        }
+        /*底部*/
+        .gybtm {
+            background-color: #808080;
+            opacity: 0.6;
+            text-align: center;
+            padding-top: 35px;
+            font-weight: bold;
+            font-size: 17px;
+            height: 78px;
+            position: absolute;
+            bottom: 0; 
+        }
+    </style>
+</head>
+<body>
+    <!--头部-->
+    <div class="gyrow col-12 gyheader">
+        <p class="col-7">网站管理系统</p>
+    </div>
+    <!--水平导航栏-->
+    <div class="row">
+        <div class="topnav">
+            <div class="dropdown">
+                <a class="dropbtn" asp-controller="Admin0" asp-action="Index"><span class="glyphicon glyphicon-home"></span>主页</a>
+            </div>
+
+
+            <div class="dropdown">
+                <a class="dropbtn" href="#">新闻管理<b class="caret"></b></a>
+                <div class="dropdown-content">
+                    <a href="https://localhost:5001/New/Index">添加新闻</a>
+                    <a href="https://localhost:5001/SelectNew/Index">新闻详情</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn" href="#">通告管理<b class="caret"></b></a>
+                <div class="dropdown-content">
+                    <a href="https://localhost:5001/Notice/Index">添加通告</a>
+                    <a href="https://localhost:5001/SelectNotice/Index">通告详情</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn" href="#">链接管理<b class="caret"></b></a>
+                <div class="dropdown-content">
+                    <a href="https://localhost:5001/Link/Index">添加链接</a>
+                    <a href="https://localhost:5001/SelectLink/Index">已有链接</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn" href="#">用户管理<b class="caret"></b></a>
+                <div class="dropdown-content">
+                    <a asp-controller="Default" asp-action="Index">用户反馈</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a class="dropbtn" href="#">课程中心<b class="caret"></b></a>
+                <div class="dropdown-content">
+                    <a href="https://localhost:5001/Course/Index">课程管理</a>
+                    <a href="https://localhost:5001/SelectCourse/Index">已有课程</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--主页内容-->
+    <div class="gyrow gyDiv">
+        <div class="col-5 div1">
+            <h2>功能介绍：</h2>
+            <hr />
+            <p>1.可以对网站首页的新闻、公告进行添加、删除及修改。</p>
+            <p>2.可以更换专业介绍页面的链接。</p>
+            <p>3.可以接收用户的意见反馈。</p>
+            <p>4.可以添加、删除、修改课程中心的课程及视频。</p>
+            <p>5.点击导航栏本人的账号即可管理账号信息。</p>
+        </div>
+        <div class="col-5 div2">
+            <h2>注意事项：</h2>
+            <hr />
+            <p>1.新闻的图片应上传为图片的本地地址或网址。</p>
+            <p>2.课程中心的视频应上传为URL。</p>
+        </div>
+    </div>
+    <!--底部-->
+    <div class="gyrow col-12 gybtm">
+        <p>Copyright 2019-12-14 GuYan 版权所有</p>
+    </div>
+</body>
+</html>
+
+
+

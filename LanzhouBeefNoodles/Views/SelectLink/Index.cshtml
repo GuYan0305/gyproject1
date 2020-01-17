@@ -1,0 +1,66 @@
+﻿@model LanzhouBeefNoodles.ViewModels.HomeViewModel
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>链接列表</title>
+    <style type="text/css">
+        .gyhead {
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+        /*表格样式*/
+        .gytable {
+            margin-left: 50px;
+            margin-top: 20px;
+            border: 1px solid #232020;
+            border-collapse: collapse;
+        }
+
+            .gytable th, td {
+                padding: 3px;
+                border: 1px solid #232020;
+                text-align: center;
+            }
+
+                .gytable th, td:not(.one) {
+                    width: 160px;
+                }
+
+            .gytable a {
+                text-decoration: none;
+                color: #464159;
+                font-size: 17px;
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <div class="gyhead">
+        <h2>链接列表</h2>
+        <a asp-controller="Admin0" asp-action="Index">管理中心</a>
+        <a asp-controller="Link" asp-action="Index">添加链接</a>
+    </div>
+    <hr />
+    <table class="gytable">
+        <tr>
+            <th class="one"><h4>链接标题</h4></th>
+            <th><h4>链接URL</h4></th>
+            <th><h4>操作</h4></th>
+        </tr>
+        @foreach (var links in Model.Links)
+        {
+            <tr>
+                <td class="one">@links.Title</td>
+                <td>@links.Url</td>
+                <td><a href="/selectlink/del/@links.Id">删除</a></td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>
+
+
+

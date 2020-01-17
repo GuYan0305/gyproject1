@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <!--1.引入bootstrap.css和bootstrap.js-->
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <link href="~/content/site.css" rel="stylesheet" />
+    <script src="~/content/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="~/content/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="~/content/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <style type="text/css">
+        .lcnav{
+            margin-top:0;
+        }
+    </style>
+</head>
+<body >
+    <!--添加全局导航栏-->
+    <div class="navbar navbar-inverse navbar-fixed-top ">
+        <div class="container">
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Default" asp-action="One"><span class="glyphicon glyphicon-home">首页</span></a></li>
+                    <li><a asp-controller="Feedback" asp-action="Index">意见反馈</a></li>
+                    <partial name="_loginPartial" />
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--2.修饰所有网页的body。然后->Views/Home/Index.cshtml-->
+    <div class="body-content row lcnav">
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false);
+</body>
+</html>
